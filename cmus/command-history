@@ -1,0 +1,80 @@
+update-cache f
+pl-create furry
+pl-create
+set output_plugin=pulse
+set output_plugin=alsa
+set mixer.alsa.device=default
+set dsp.alsa.device=default
+set wrap_search=true
+set output_plugin=oss
+q
+help
+output_plugin
+set output_plugin alsa
+set output_plugin=pulseaudio
+set output_plugin=ao
+set lib_sort=artist title date album discnumber tracknumber title filename play_count
+set lib_sort=title date album discnumber tracknumber title filename play_count
+QUIT
+bind -f common - vol -5%
+bind -f common + vol +5%
+bind -f common = vol +5%
+set resume=false
+set continue=true
+set continue=false
+quit
+set format_playlist_va= %-21%a %3n. %t%= %y %d %{?X!=0?%3X ?    }
+set format_playlist= %-21%a %3n. %t%= %y %d %{?X!=0?%3X ?    }
+bind common 8  clear
+set format_playlist_va= %-21%a %= %t %y %d %{?X!=0?%3X ?    }
+set format_playlist_va= %-21%a %= %y %d %{?X!=0?%3X ?    }
+set format_playlist_va= %-21%a %t %y %d %{?X!=0?%3X ?    }
+set format_playlist_va= %-21%a %=  %t %y %d %{?X!=0?%3X ?    }
+set format_playlist_va= %-21%a %t %= %y %d %{?X!=0?%3X ?    }
+set format_playlist_va= %-21%a %3n. %t %= %y %d %{?X!=0?%3X ?    }
+set format_playlist_va= %a %3n. %t %= %y %d %{?X!=0?%3X ?    }
+fset 
+fset missing-tag=!stream&(artist=""|album=""|title=""|tracknumber=-1|date=-1)
+fset flac=filename="*.flac"
+fset unheard=play_count=0
+fset 90s=date>=1990&date<2000
+set display_artist_sort_name=false
+set display_artist_sort_name=true
+set resume=true
+set mouse=false
+set mouse=true
+set follow=true
+set color_win_dir=lightblue
+set color_win_dir=magenta
+set color_win_title_bg=magenta
+set color_win_sel_bg=magenta
+set color_win_sel_bg=5
+set color_win_sel_bg=4
+set color_win_sel_bg=3
+set color_win_sel_bg=2
+set color_win_sel_bg=1
+set color_win_sel_bg=73
+set color_win_sel_bg=72
+set color_win_sel_bg=71
+set color_win_sel_bg=75
+set color_win_sel_bg=70
+set color_win_sel_bg=65
+set color_win_sel_bg=60
+set color_win_sel_bg=55
+set color_win_sel_bg=50
+set color_win_sel_bg=45
+set color_win_sel_bg=35
+set color_win_sel_bg=25
+set color_win_sel_bg=15
+set color_win_sel_bg=0
+set color_win_sel_bg=10
+set color_win_sel_bg=l0
+set color_win_sel_bg=20
+set color_win_sel_bg=30
+set color_win_sel_bg=40
+set color_win_sel_bg=400
+set color_win_sel_bg=100
+set color_win_sel_bg=
+set color_win_sel_bg=244
+set color_win_sel_bg=255
+set color_win_sel_bg=purple
