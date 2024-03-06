@@ -56,8 +56,8 @@ URxvt.urgentOnBell: true
 URxvt.depth: 32
 URxvt.iso14755: false
 URxvt.transparent: true
-URxvt.shading: 45
-URxvt.blurRadius: 15
+URxvt.shading: 50
+URxvt.blurRadius: 0
 URxvt.fading: 30
 URxvt.termName:rxvt
 !! Common Keybinds for Navigations
