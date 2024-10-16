@@ -45,12 +45,13 @@ plugins = {
 				"RainbowOrange",
 				"RainbowGreen",
 				"RainbowViolet",
-				"RainbowCyan", ]]--
+				"RainbowCyan", 
+                ]]--
 				"myColor",
 			}
 			local hooks = require("ibl.hooks")
 			hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-				--[[
+                --[[
 				vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
 				vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
 				vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
@@ -58,7 +59,7 @@ plugins = {
 				vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
 				vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
 				vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
-				]]--
+                ]]--
 				vim.api.nvim_set_hl(0, "myColor", { fg = "#555555"})
 			end)
 			--vim.g.rainbow_delimiters = { highlight = highlight }
@@ -89,7 +90,7 @@ plugins = {
 
 			local capabilities = cmp_nvim_lsp.default_capabilities()
 
-			local myservers = {"pyright", "html", "clangd", "lua_ls", "angularls", "bashls", "cssls", "jdtls"}
+			local myservers = {"pyright", "html", "clangd", "lua_ls", "angularls", "bashls", "cssls", "jdtls", "ts_ls", "eslint"}
 			for _,serv in ipairs(myservers) do
 				lspconfig[serv].setup({
 					capabilities = capabilities,
@@ -102,12 +103,26 @@ plugins = {
 	{
 		"norcalli/nvim-colorizer.lua",
 		config = function()
-			require("colorizer").setup({"*";})
+			require("colorizer").setup({"*";css = {rgb_fn = true;};})
 		end
+	},
+	{
+	    "nvim-neo-tree/neo-tree.nvim",
+	    branch = "v3.x",
+	    dependencies = {
+	      "nvim-lua/plenary.nvim",
+	      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+	      "MunifTanjim/nui.nvim",
+	      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+	    }
 	},
 }
 
 vim.cmd("set number")
 vim.cmd("set termguicolors")
+vim.cmd("set tabstop=4")
+vim.cmd("set shiftwidth=4")
+vim.cmd("set expandtab")
+vim.cmd("set smartindent")
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 require("lazy").setup(plugins,opts)
