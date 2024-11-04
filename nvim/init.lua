@@ -90,7 +90,7 @@ plugins = {
 
 			local capabilities = cmp_nvim_lsp.default_capabilities()
 
-			local myservers = {"pyright", "html", "clangd", "lua_ls", "angularls", "bashls", "cssls", "jdtls", "ts_ls", "eslint"}
+			local myservers = {"pyright", "html", "clangd", "lua_ls", "angularls", "bashls", "cssls", "jdtls", "ts_ls", "eslint", "omnisharp", "dartls"}
 			for _,serv in ipairs(myservers) do
 				lspconfig[serv].setup({
 					capabilities = capabilities,
@@ -116,6 +116,15 @@ plugins = {
 	      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 	    }
 	},
+    {
+        'nvim-flutter/flutter-tools.nvim',
+        lazy = false,
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'stevearc/dressing.nvim', -- optional for vim.ui.select
+        },
+        config = true,
+    },
 }
 
 vim.cmd("set number")
