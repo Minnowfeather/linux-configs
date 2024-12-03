@@ -90,7 +90,7 @@ plugins = {
 
 			local capabilities = cmp_nvim_lsp.default_capabilities()
 
-			local myservers = {"pyright", "html", "clangd", "lua_ls", "angularls", "bashls", "cssls", "jdtls", "ts_ls", "eslint", "omnisharp", "dartls"}
+			local myservers = {"pyright", "html", "clangd", "lua_ls", "bashls", "cssls", "jdtls", "ts_ls", "eslint", "omnisharp", "dartls"}
 			for _,serv in ipairs(myservers) do
 				lspconfig[serv].setup({
 					capabilities = capabilities,
@@ -125,6 +125,7 @@ plugins = {
         },
         config = true,
     },
+    {"ellisonleao/glow.nvim", config = true, cmd = "Glow"},
 }
 
 vim.cmd("set number")
