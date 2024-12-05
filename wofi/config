@@ -1,0 +1,11 @@
+width=30%
+height=40%
+allow_images=true
+gtk_dark=true
+halign=fill
+content_halign=left
+key_expand=Tab
+insensitive=true
+prompt=Search...
+no_actions=true
+colors=colors
