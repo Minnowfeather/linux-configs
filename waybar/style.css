@@ -42,6 +42,10 @@ button:hover{
     background-color: alpha(@overlay0, 0.2);  
     color: @sapphire; 
 }
+#memory {
+    background-color: alpha(@overlay0, 0.2);
+    color: @blue;
+}
 #temperature {
     background-color: alpha(@overlay0, 0.2);  
     color: @blue

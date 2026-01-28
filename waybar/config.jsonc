@@ -14,12 +14,15 @@
         //"sway/scratchpad",
         //"custom/media"
     ],
+    "modules-center": [
+        "mpris"
+    ],
     "modules-right": [
         "pulseaudio",
         "network",
         //"power-profiles-daemon",
         //"cpu",
-        //"memory",
+        "memory",
         "temperature",
         //"backlight",
         //"keyboard-state",
@@ -39,7 +42,9 @@
         "format-icons": {
             "1": "",
             "2": "󰈹",
-            "3": "",
+            "3": "",
+            "8": "",
+            "9": "󰐟",
             "10": ""
         }
     },
@@ -101,10 +106,10 @@
     },
     "clock": {
         "timezone": "America/Los_Angeles",
-	"interval": 1,
+	    "interval": 1,
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-	"format": "{:%I:%M:%S %p}",
-        "format-alt": "{:%Y-%m-%d}"
+	    "format": "{:%A, %d %B %Y \t %I:%M:%S %p}",
+	    "format-alt": "{:%A, %d %b %Y \t %I:%M %p}"
     },
     "cpu": {
         "format": "{usage}% ",
@@ -115,10 +120,10 @@
     },
     "temperature": {
         // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
+        "format": "CPU Temp: {temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
     },
     "backlight": {
@@ -136,7 +141,7 @@
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
+        // "fmprisormat-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
@@ -180,7 +185,7 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pwvucontrol"
     },
     "custom/media": {
         "format": "{icon} {}",
@@ -199,19 +204,28 @@
         "format": "{icon}",
         "format-icons": {
             "notification": "<span foreground='red'><sup></sup></span>",
-	    "none": "",
-	    "dnd-notification": "<span foreground='red'><sup></sup></span>",
-	    "dnd-none": "",
-	    "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-	    "inhibited-none": "",
-	    "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-	    "dnd-inhibited-none": ""
-	},
-	"return-type": "json",
-	"exec-if": "which swaync-client",
-	"exec": "swaync-client -swb",
-	"on-click": "swaync-client -t -sw",
-	"on-click-right": "swaync-client -d -sw",
-	"escape": true
+	        "none": "",
+	        "dnd-notification": "<span foreground='red'><sup></sup></span>",
+	        "dnd-none": "",
+	        "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+	        "inhibited-none": "",
+	        "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+	        "dnd-inhibited-none": ""
+        },
+	    "return-type": "json",
+	    "exec-if": "which swaync-client",
+	    "exec": "swaync-client -swb",
+    	"on-click": "swaync-client -t -sw",
+	    "on-click-right": "swaync-client -d -sw",
+	    "escape": true
+    },
+    "mpris": {
+        "format": "{status_icon} \t <b>{artist}</b> / <i>{title}</i>",
+        "status-icons": {
+            "paused": "▶",
+            "playing": "⏸︎",
+            "stopped": "⏹"
+        },
+        "interval": 0
     }
 }
