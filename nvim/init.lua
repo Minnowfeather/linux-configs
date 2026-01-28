@@ -67,6 +67,10 @@ plugins = {
 			--hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
 		end
 	},
+    {
+        "mason-org/mason.nvim",
+        opts = {}
+    },
 	{
 		"williamboman/mason-lspconfig.nvim",
 		event = { "BufReadPre", "BufNewFile" },
