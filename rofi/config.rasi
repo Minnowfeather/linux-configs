@@ -1,0 +1,76 @@
+* {
+    foreground: #cdd6f455;
+}
+
+configuration {
+    case-sensitive: false;
+    scroll-method: 1;
+    drun-display-format: "{name}";
+}
+
+element {
+    padding: 4px;
+    children: [element-icon, element-text];
+}
+
+element alternate.normal, element normal.normal {
+    background-color: inherit;
+}
+element-icon {
+    size: 1.5em;
+    margin: 0px 10px 0px 0px;
+}
+element-text {
+    color: #cdd6f4;
+    font: "Adawaita Sans Regular 14";
+    vertical-align: 0.8;
+    highlight: none;
+}
+
+window {
+    background-color: transparent;
+    border: 0;
+    width: 30%;
+    height: 40%;
+}
+mainbox {
+    children: [inputbar, listview];
+}
+message {
+    border: 0px;
+}
+element selected.normal {
+    background-color: transparent;
+    border: 2px;
+    border-radius: 5px;
+}
+element-text selected.normal {
+        color: #f5c2e7;
+}
+
+inputbar {
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    margin: 0px 0px 10px 0px;
+    padding: 10px;
+    children: [textbox-prompt-colon,entry];
+    border-radius: 5px;
+    border: 2px;
+    border-color: #181825;
+}
+textbox-prompt-colon {
+    str: "🔍";
+}
+entry {
+    placeholder: "Search...";
+    background-color: transparent;
+    color: #cdd6f4;
+    font: "Adawaita Sans Regular 15";
+} 
+listview {
+    background-color: #1e1e2e;
+    text-color: white;
+    border-radius: 5px;
+    border: 2px;
+    border-color: #181825;
+}

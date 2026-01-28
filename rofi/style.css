@@ -1,0 +1,41 @@
+/* comment lol */
+/* man 5 wofi  and man 7 wofi for the list of css selectors (near the end?)*/
+
+#window{
+    background-color: transparent;
+}
+#inner-box{
+    border-radius: 10px;
+}
+#scroll{
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: --wofi-color0;
+
+    border: 2px solid;
+    border-color: --wofi-color3;
+}
+#input{
+    background-color: --wofi-color0;
+    color: --wofi-color2;
+
+    border: 2px solid;
+    border-color: --wofi-color3;
+    
+}
+#input:focus{
+    outline: none;
+    box-shadow: none;
+}
+#entry:selected{
+    background-color: transparent;
+}
+#text:selected{
+    color: --wofi-color1;
+}
+#text{
+    color: --wofi-color2;
+}
+#img{
+    margin-right: 10px;
+}
